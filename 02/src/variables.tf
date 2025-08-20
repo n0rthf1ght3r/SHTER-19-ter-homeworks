@@ -31,10 +31,9 @@ variable "vpc_name" {
 
 ###ssh vars
 
-variable "vms_ssh_root_key" {
+variable "vms_ssh_public_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
+  description = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJpYbwJI0AnKlZhwxWipXErfFk1LDxmXMpMIgoscd4r2 webinar"
 }
 
 # === Variables added for Task 2 ===
@@ -43,53 +42,8 @@ variable "image_family" {
   default = "ubuntu-2004-lts"
 }
 
-variable "vm_web_name" {
-  type = string
-  default = "netology-develop-platform-web"
+variable "default_cidr_b" {
+  type    = list(string)
+  default = ["10.0.2.0/24"]
+  description = "CIDR for ru-central1-b subnet"
 }
-
-variable "vm_web_platform_id" {
-  type = string
-  default = "standart-v4"
-}
-
-variable "vm_web_cores" {
-  type = number
-  default = 1
-}
-
-variable "vm_web_memory" {
-  type = number
-  default = 1
-}
-
-variable "vm_web_core_fraction" {
-  type = number
-  default = 5
-}
-
-variable "vm_web_preemptible" {
-  type = bool
-  default = true
-}
-
-variable "vm_web_boot_disk_size" {
-  type = number
-  default = 10
-}
-
-variable "vm_web_boot_disk_type" {
-  type = string
-  default = "network-hdd"
-}
-
-variable "vm_web_nat" {
-  type = bool
-  default = true
-}
-
-variable "vm_web_ssh_user" {
-  type = string
-  default = "ubuntu"
-}
-
