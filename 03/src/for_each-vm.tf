@@ -2,8 +2,6 @@
 data "yandex_compute_image" "ubuntu" {
   family = "ubuntu-2204-lts"
 }
-
-# Преобразуем список объектов в map для удобного for_each
 locals {
   # ожидается var.each_vm = [
   #   { vm_name = "main",    cpu = 2, ram = 2,  disk_volume = 20 },
