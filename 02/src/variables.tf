@@ -25,16 +25,16 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
-variable "vms_ssh_root_key" {
-  type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
-}
+# variable "vms_ssh_root_key" {
+#   type        = string
+#   default     = "<your_ssh_ed25519_key>"
+#   description = "ssh-keygen -t ed25519"
+# }
 
-variable "service_account_key_file" {
-  type        = string
-  description = "Path to SA JSON key"
-}
+# variable "service_account_key_file" {
+#   type        = string
+#   description = "Path to SA JSON key"
+# }
 
 variable "default_cidr_b" {
   type        = list(string)
@@ -48,10 +48,10 @@ variable "image_family" {
   description = "Image family"
 }
 
-variable "vms_ssh_public_root_key" {
-  type        = string
-  description = "Public SSH key line"
-}
+# variable "vms_ssh_public_root_key" {
+#   type        = string
+#   description = "Public SSH key line"
+# }
 
 variable "vms_resources" {
   type = map(object({
