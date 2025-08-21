@@ -1,0 +1,17 @@
+[all:vars]
+ansible_user=${ansible_user}
+ansible_ssh_private_key_file=${ansible_private_key_path}
+ansible_python_interpreter=/usr/bin/python3
+
+[webservers]
+%{ for h in web ~}
+${h.name} ansible_host=${h.ip} fqdn=${h.fqdn}
+%{ endfor ~}
+
+[databases]
+%{ for h in db ~}
+${h.name} ansible_host=${h.ip} fqdn=${h.fqdn}
+%{ endfor ~}
+
+[storage]
+${storage.name} ansible_host=${storage.ip} fqdn=${storage.fqdn}
